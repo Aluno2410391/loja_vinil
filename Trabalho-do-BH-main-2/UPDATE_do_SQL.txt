@@ -1,0 +1,43 @@
+USE loja_vinil;
+
+-- Adiciona a coluna foto se ela não existir
+ALTER TABLE produto
+ADD COLUMN foto VARCHAR(255) NULL AFTER marca;
+
+-- Atualiza produtos existentes
+UPDATE produto
+SET foto = 'https://m.media-amazon.com/images/I/71FF1JBUVQL._AC_UF1000,1000_QL80_.jpg'
+WHERE id = 6;
+
+-- Novos produtos
+INSERT IGNORE INTO produto
+(id, categoria_id, nome, descricao, tipo, marca, foto, ativo)
+VALUES
+(8, 1, 'Killers', 'Melhor banda de Heavy metal Britanico Iron Maiden',
+ 'vinil', NULL,
+ 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Iron_Maiden_Killers.jpg/250px-Iron_Maiden_Killers.jpg',
+ 0),
+
+(9, 1, 'Thriller', 'MJ',
+ 'vinil', NULL,
+ 'https://cdn-images.dzcdn.net/images/cover/92a024220a9532489c75c9d994835697/1900x1900-80-0-0.jpg',
+ 1);
+
+-- Novas variações
+INSERT IGNORE INTO variacao
+(id, produto_id, descricao, preco)
+VALUES
+(10, 8, 'LP', 100.00),
+(11, 9, 'LP', 87.00);
+
+-- Estoque dos novos produtos
+INSERT IGNORE INTO estoque
+(id, variacao_id, quantidade, minimo)
+VALUES
+(10, 10, 5, 1),
+(11, 11, 5, 1);
+
+-- Ajusta AUTO_INCREMENT
+ALTER TABLE produto AUTO_INCREMENT = 10;
+ALTER TABLE variacao AUTO_INCREMENT = 12;
+ALTER TABLE usuario AUTO_INCREMENT = 6;

@@ -1,0 +1,171 @@
+/* ==========================================================================
+   TELA DE FINALIZAÇÃO DE PAGAMENTO (CHECKOUT UI/UX) - AJUSTADO SEM CONFLITO
+   ========================================================================== */
+
+/* Escopo de página para o fundo */
+body.page-pagamento {
+    background: linear-gradient(180deg, #faf3e9 0%, #e3d0b1 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Garante o comportamento correto do container sem estragar a Navbar do topo */
+.pagamento-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* 1. Caixa de Resumo de Pedido */
+.resumo-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    text-align: center;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 10px 30px rgba(42, 31, 18, 0.04);
+    margin-bottom: 40px;
+}
+
+.resumo-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    color: #1a120b;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.resumo-box p {
+    color: #705c47;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.preco-final {
+    font-size: 2.8rem;
+    color: #15803d;
+    font-weight: 700;
+    margin-top: 15px;
+    letter-spacing: -1.5px;
+    display: inline-block;
+}
+
+.metodos-titulo {
+    font-size: 1.35rem;
+    color: #2a1f12;
+    margin: 0 0 24px 0;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+/* 2. Grid de Métodos de Pagamento */
+.pagamento-grid {
+    display: block;
+}
+
+/* Card isolado para não conflitar com a Navbar */
+.metodo-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(42, 31, 18, 0.08);
+    box-shadow: 0 4px 12px rgba(42, 31, 18, 0.02);
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.metodo-card:hover {
+    border-color: #222222;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(42, 31, 18, 0.08);
+}
+
+.metodo-card img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background-color: #faf8f5;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.metodo-info {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.metodo-info h3 {
+    font-size: 1.2rem;
+    color: #1a120b;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.metodo-info p {
+    color: #705c47;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.metodo-card form {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 180px;
+}
+
+.btn-finalizar {
+    background-color: #222222;
+    color: #ffffff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(34, 34, 34, 0.12);
+    transition: all 0.2s ease;
+}
+
+.btn-finalizar:hover {
+    background-color: #444444;
+    box-shadow: 0 6px 16px rgba(34, 34, 34, 0.22);
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO RESPONSIVA PARA DISPOSITIVOS MÓVEIS
+   ========================================================================== */
+@media (max-width: 680px) {
+    .metodo-card, 
+    .metodo-card img, 
+    .metodo-info, 
+    .metodo-card form {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .metodo-card img {
+        margin: 0 auto 15px auto;
+    }
+
+    .metodo-info {
+        margin-bottom: 20px;
+    }
+}

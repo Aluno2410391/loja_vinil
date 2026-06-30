@@ -1,0 +1,206 @@
+/* ==========================================================================
+   TELA DE SUPORTE E ATENDIMENTO (HELP DESK UI/UX)
+   ========================================================================== */
+
+/* Escopo de página para manter a consistência visual */
+body.page-suporte {
+    background: linear-gradient(180deg, #faf3e9 0%, #e3d0b1 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.suporte-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* Cabeçalho da Central de Ajuda */
+.suporte-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.suporte-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    color: #1a120b;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.suporte-header p {
+    color: #705c47;
+    font-size: 1.1rem;
+}
+
+/* Grid Principal (Divide em Canais de Contato e Formulário) */
+.suporte-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* ==========================================================================
+   COLUNA 1: CARTOES DE CONTATO RÁPIDO
+   ========================================================================== */
+.suporte-canais {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.canal-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 4px 15px rgba(42, 31, 18, 0.02);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.canal-card:hover {
+    transform: translateY(-2px);
+    border-color: #222222;
+    box-shadow: 0 8px 20px rgba(42, 31, 18, 0.06);
+}
+
+.canal-icone {
+    font-size: 2rem;
+    background: #faf8f5;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #faf3e9;
+}
+
+.canal-info h3 {
+    font-size: 1.1rem;
+    color: #1a120b;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.canal-info p {
+    color: #705c47;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   COLUNA 2: FORMULÁRIO DE CONTATO PREMIUM
+   ========================================================================== */
+.suporte-form-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 10px 30px rgba(42, 31, 18, 0.04);
+}
+
+.suporte-form-box h3 {
+    font-size: 1.3rem;
+    color: #2a1f12;
+    margin-bottom: 25px;
+    font-weight: 700;
+    border-bottom: 2px solid #faf3e9;
+    padding-bottom: 10px;
+}
+
+/* Inputs e Textarea Modernizados */
+.suporte-form .form-group {
+    margin-bottom: 20px;
+}
+
+.suporte-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2a1f12;
+    font-size: 0.9rem;
+}
+
+.suporte-form input,
+.suporte-form select,
+.suporte-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #d1c2ad;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #2a1f12;
+    background-color: #fdfbf7;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.suporte-form input:focus,
+.suporte-form select:focus,
+.suporte-form textarea:focus {
+    border-color: #222222;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(34, 34, 34, 0.08);
+    outline: none;
+}
+
+/* Trava o redimensionamento horizontal do textarea para não quebrar a página */
+.suporte-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Botão de Envio de Ticket */
+.btn-suporte-enviar {
+    width: 100%;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-suporte-enviar:hover {
+    background-color: #444444;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(34, 34, 34, 0.25);
+}
+
+/* Alertas de Sucesso / Mensagem Enviada */
+.alert-sucesso {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO RESPONSIVA (MOBILE FIRST)
+   ========================================================================== */
+@media (max-width: 820px) {
+    .suporte-grid {
+        grid-template-columns: 1fr; /* Transforma em uma única coluna no celular */
+        gap: 35px;
+    }
+
+    .suporte-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .suporte-form-box {
+        padding: 25px 20px;
+    }
+}

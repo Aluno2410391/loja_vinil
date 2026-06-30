@@ -1,0 +1,279 @@
+/* ==========================================================================
+   TELA DE CARRINHO DE COMPRAS (SHOPPING CART UI/UX)
+   ========================================================================== */
+
+/* Escopo de página para manter o fundo consistente */
+body.page-carrinho {
+    background: linear-gradient(180deg, #faf3e9 0%, #e3d0b1 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.carrinho-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* Título da Seção */
+.carrinho-container h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    color: #1a120b;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   ESTRUTURA DA TABELA DE ITENS (RESPONSIVA)
+   ========================================================================== */
+.carrinho-wrapper {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 10px 30px rgba(42, 31, 18, 0.04);
+    margin-bottom: 30px;
+}
+
+.tabela-carrinho {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-carrinho th {
+    color: #705c47;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #faf3e9;
+}
+
+.tabela-carrinho td {
+    padding: 20px 0;
+    border-bottom: 1px solid #faf3e9;
+    vertical-align: middle;
+}
+
+/* Detalhes do Produto (Foto + Nome) */
+.carrinho-produto-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.carrinho-produto-info img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.carrinho-produto-info h3 {
+    font-size: 1.1rem;
+    color: #1a120b;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Preços e Subtotais */
+.carrinho-preco {
+    font-size: 1.05rem;
+    color: #2a1f12;
+    font-weight: 600;
+}
+
+.carrinho-subtotal {
+    font-size: 1.1rem;
+    color: #15803d; /* Verde comercial */
+    font-weight: 700;
+}
+
+/* Seletor de Quantidade Moderno */
+.carrinho-qtd-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carrinho-qtd-input {
+    width: 50px;
+    padding: 6px;
+    border: 1.5px solid #d1c2ad;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    color: #2a1f12;
+    background-color: #fdfbf7;
+}
+
+.carrinho-qtd-input:focus {
+    border-color: #222222;
+    outline: none;
+}
+
+/* Botão de Remover Item (Sutil, mas perceptível) */
+.btn-remover-item {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.btn-remover-item:hover {
+    color: #b91c1c;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESUMO DO VALOR TOTAL E AÇÕES
+   ========================================================================== */
+.carrinho-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px 30px;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 4px 20px rgba(42, 31, 18, 0.02);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.carrinho-total-label {
+    font-size: 1.1rem;
+    color: #705c47;
+    font-weight: 600;
+}
+
+.carrinho-total-valor {
+    font-size: 2rem;
+    color: #15803d;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.carrinho-acoes {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botão Continuar Comprando (Secundário) */
+.btn-carrinho-voltar {
+    background-color: transparent;
+    color: #222222;
+    border: 2px solid #222222;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-carrinho-voltar:hover {
+    background-color: rgba(34, 34, 34, 0.05);
+}
+
+/* Botão Finalizar Compra (Primário de Alta Conversão) */
+.btn-carrinho-avancar {
+    background-color: #222222;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+    transition: all 0.2s ease;
+}
+
+.btn-carrinho-avancar:hover {
+    background-color: #444444;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(34, 34, 34, 0.25);
+}
+
+/* Estado de Carrinho Vazio */
+.carrinho-vazio {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.carrinho-vazio p {
+    color: #705c47;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO RESPONSIVA PARA DISPOSITIVOS MÓVEIS
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Transforma a tabela em blocos empilhados visuais no celular */
+    .tabela-carrinho, .tabela-carrinho thead, .tabela-carrinho tbody, .tabela-carrinho tr, .tabela-carrinho td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabela-carrinho thead {
+        display: none; /* Oculta os cabeçalhos da tabela tradicional */
+    }
+
+    .tabela-carrinho tr {
+        position: relative;
+        padding: 15px 0;
+        border-bottom: 2px solid #faf3e9;
+    }
+
+    .tabela-carrinho td {
+        border: none;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Adiciona labels via CSS para simular a tabela no mobile */
+    .tabela-carrinho td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #705c47;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+    }
+
+    .tabela-carrinho td.celula-produto {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .tabela-carrinho td.celula-produto::before {
+        display: none;
+    }
+
+    .carrinho-total-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carrinho-acoes {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-carrinho-voltar, .btn-carrinho-avancar {
+        width: 100%;
+    }
+}

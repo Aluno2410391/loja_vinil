@@ -1,0 +1,15 @@
+body{
+    overflow-x: hidden;
+}
+img {
+position: relative;
+width: 410px;
+left: 510px;
+}
+p1 {
+position: relative;
+margin-top: 100px;
+display: block;
+left: 360px;
+font-size: 1.6rem;
+}

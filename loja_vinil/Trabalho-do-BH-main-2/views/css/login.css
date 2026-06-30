@@ -1,0 +1,214 @@
+/* ==========================================================================
+   TELA DE LOGIN - PADRÃO PREMIUM MVC
+   ========================================================================== */
+
+/* Define que a página de login ocupará toda a tela sem barras de rolagem desnecessárias */
+body.page-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #faf3e9 0%, #e3d0b1 100%);
+}
+
+/* Container Principal em Grid (Divide a tela em imagem e formulário no Desktop) */
+.login-master-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    max-width: 1000px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(42, 31, 18, 0.15);
+    border: 1px solid rgba(42, 31, 18, 0.05);
+}
+
+/* Lado Esquerdo: Container da Imagem Institucional/Banner */
+.login-banner {
+    position: relative;
+    background-color: #1a120b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.login-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 550px;
+    border-radius: 12px;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.login-master-container:hover .login-banner img {
+    transform: scale(1.03);
+}
+
+/* Lado Direito: Área do Formulário de Login */
+.login-section {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Cabeçalho do Formulário */
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-header .logo-login {
+    height: 50px;
+    width: auto;
+    margin: 0 auto 15px;
+    object-fit: contain;
+}
+
+.login-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    color: #1a120b;
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-header p {
+    color: #705c47;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* Grupos de Entrada de Dados (Campos) */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2a1f12;
+    font-size: 0.9rem;
+    letter-spacing: -0.2px;
+}
+
+/* Inputs Modernizados (Feedback visual imediato no Focus) */
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #d1c2ad;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #2a1f12;
+    background-color: #fdfbf7;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #222222;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(34, 34, 34, 0.08);
+    outline: none;
+}
+
+/* Alertas de Erro/Validação Dinâmicos */
+.alert-danger {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fee2e2;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Botão de Envio Comercial (Alta Conversão) */
+.btn-login-enviar {
+    width: 100%;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login-enviar:hover {
+    background-color: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 34, 34, 0.25);
+}
+
+/* Rodapé do Login: Links de Alternância (Criar Conta) */
+.login-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #5c4d3c;
+}
+
+.login-footer a {
+    color: #222222;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* Direitos Autorais / Rodapé Fixo Inferior */
+.direitos-login {
+    position: absolute;
+    bottom: 15px;
+    font-size: 0.8rem;
+    color: #8c765c;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO RESPONSIVA (MOBILE FIRST)
+   ========================================================================== */
+@media (max-width: 840px) {
+    .login-master-container {
+        grid-template-columns: 1fr; /* Transforma em uma única coluna fluida */
+        max-width: 460px;
+        border-radius: 20px;
+    }
+
+    /* Oculta o banner de imagem em telas pequenas para priorizar o foco no login */
+    .login-banner {
+        display: none;
+    }
+
+    .login-section {
+        padding: 40px 25px;
+    }
+    
+    .login-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .direitos-login {
+        position: static;
+        margin-top: 25px;
+        padding-bottom: 10px;
+    }
+}

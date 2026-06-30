@@ -1,0 +1,75 @@
+ /* Alinha a logo e os links horizontalmente e estica a barra amarela */
+ html body.page-acessorios .navbar {
+     background-color: #ebe48d !important;
+     border-bottom: 3.5px solid #1a120b !important;
+     padding: 14px 0 !important;
+     width: 100% !important;
+     position: relative !important;
+     display: block !important;
+     box-sizing: border-box !important;
+     float: none !important;
+     clear: both !important;
+ }
+
+ /* Container Flexbox (Logo na esquerda, Menu na direita) */
+ html body.page-acessorios .navbar .home-container {
+     max-width: 1200px !important;
+     width: 100% !important;
+     margin: 0 auto !important;
+     padding: 0 20px !important;
+     display: flex !important;
+     flex-direction: row !important;
+     justify-content: space-between !important;
+     align-items: center !important;
+     box-sizing: border-box !important;
+ }
+
+ /* Garante a caixinha branca em volta da logo */
+ html body.page-acessorios .logo-wrapper {
+     display: flex !important;
+     align-items: center !important;
+     background-color: #ffffff !important;
+     padding: 6px 16px !important;
+     border-radius: 14px !important;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+     margin: 0 !important;
+     float: none !important;
+ }
+
+ html body.page-acessorios .logo-wrapper img {
+     height: 42px !important;
+     width: auto !important;
+     display: block !important;
+ }
+
+ /* Alinha a lista de links na horizontal */
+ html body.page-acessorios .nav-links {
+     display: flex !important;
+     flex-direction: row !important;
+     align-items: center !important;
+     gap: 12px !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     list-style: none !important;
+ }
+
+ /* Força o título e subtítulo da vitrine a ficarem centralizados */
+ html body.page-acessorios .acessorios-header {
+     text-align: center !important;
+     margin-bottom: 45px !important;
+     width: 100% !important;
+     clear: both !important;
+ }
+
+ /* Ajuste responsivo para telas pequenas */
+ @media (max-width: 768px) {
+     html body.page-acessorios .navbar .home-container {
+         flex-direction: column !important;
+         gap: 15px !important;
+     }
+
+     html body.page-acessorios .nav-links {
+         flex-wrap: wrap !important;
+         justify-content: center !important;
+     }
+ }

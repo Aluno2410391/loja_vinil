@@ -1,0 +1,340 @@
+/* ==========================================================================
+   PÁGINA DE VITRINE DE ACESSÓRIOS (CATÁLOGO UI/UX)
+   ========================================================================== */
+
+/* Escopo de página para manter o fundo consistente */
+body.page-acessorios {
+    background: linear-gradient(180deg, #faf3e9 0%, #e3d0b1 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================================
+   FORÇAMENTO E ALINHAMENTO DA NAVBAR PRESTIGE (ISOLADA DO STYLE.CSS)
+   ========================================================================== */
+
+/* Base sólida da barra: Garante o fundo amarelo vintage e a linha preta inferior */
+body.page-acessorios .navbar {
+    background-color: #ebe48d !important;
+    border-bottom: 3.5px solid #1a120b !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+/* Alinhamento horizontal absoluto (Logo na esquerda, Menu na direita) */
+body.page-acessorios .navbar .home-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Invólucro da logo: Mantém o tamanho retangular limpo, sem cortes e sem amassar */
+body.page-acessorios .logo-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #ffffff !important;
+    padding: 6px 12px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.page-acessorios .logo-wrapper img {
+    height: 42px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* Alinhador linear horizontal para os botões e links */
+body.page-acessorios .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* Estilização Individual de cada link do menu */
+body.page-acessorios .nav-links a {
+    text-decoration: none !important;
+    color: #1a120b !important;
+    font-weight: 700 !important;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    background-color: transparent !important;
+}
+
+/* Efeito de Link Ativo (Fundo preto com escrita branca - Padrão de Destaque) */
+body.page-acessorios .nav-links a.active {
+    background-color: #1a120b !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Efeito de passar o mouse nos botões comuns */
+body.page-acessorios .nav-links a:hover:not(.active) {
+    background-color: rgba(26, 18, 11, 0.08) !important;
+}
+
+/* Destaque para o link de Sair */
+body.page-acessorios .nav-links a[href*="logout"] {
+    color: #ef4444 !important;
+}
+body.page-acessorios .nav-links a[href*="logout"]:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL DA VITRINE
+   ========================================================================== */
+.acessorios-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* Cabeçalho e títulos da página - CENTRALIZADO VIA UI/UX */
+.acessorios-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.acessorios-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    color: #1a120b;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.acessorios-header p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #705c47;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   GRID DE PRODUTOS (Layout Autoadaptável)
+   ========================================================================== */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Card do Produto */
+.produto-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 4px 15px rgba(42, 31, 18, 0.02);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.3s ease;
+}
+
+/* Microinteração de elevação ao passar o mouse */
+.produto-card:hover {
+    transform: translateY(-5px);
+    border-color: #222222;
+    box-shadow: 0 12px 28px rgba(42, 31, 18, 0.08);
+}
+
+/* Container da Imagem (Corte proporcional perfeito) */
+.produto-img-wrapper {
+    width: 100%;
+    height: 240px;
+    background-color: #faf8f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #faf3e9;
+}
+
+.produto-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.produto-card:hover .produto-img-wrapper img {
+    transform: scale(1.04);
+}
+
+/* Informações do Produto (Textos e Preço) */
+.produto-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.produto-categoria {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #705c47;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.produto-titulo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    color: #1a120b;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.produto-preco-box {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.produto-preco {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    color: #15803d;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Botão de Ação Comercial */
+.produto-action-form {
+    padding: 0 20px 20px 20px;
+}
+
+.btn-adicionar-carrinho {
+    width: 100%;
+    background-color: #222222;
+    color: #ffffff;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(34, 34, 34, 0.1);
+    transition: all 0.2s ease;
+}
+
+.btn-adicionar-carrinho:hover {
+    background-color: #444444;
+    box-shadow: 0 6px 16px rgba(34, 34, 34, 0.2);
+}
+
+.btn-adicionar-carrinho:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   COMPORTAMENTO RESPONSIVO MÓVEL E SUPORTE A TELAS MENORES
+   ========================================================================== */
+@media (max-width: 768px) {
+    body.page-acessorios .navbar .home-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+        text-align: center !important;
+    }
+    
+    body.page-acessorios .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    
+    body.page-acessorios .nav-links a {
+        padding: 8px 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .acessorios-container {
+        margin: 20px auto;
+        padding-bottom: 40px;
+    }
+
+    .acessorios-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .produto-card {
+        border-radius: 14px;
+    }
+
+    .produto-img-wrapper {
+        height: 160px;
+    }
+
+    .produto-info {
+        padding: 12px;
+    }
+
+    .produto-titulo {
+        font-size: 0.95rem;
+    }
+
+    .produto-preco {
+        font-size: 1.15rem;
+    }
+
+    .produto-action-form {
+        padding: 0 12px 12px 12px;
+    }
+
+    .btn-adicionar-carrinho {
+        padding: 10px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .produto-img-wrapper {
+        height: 220px;
+    }
+}

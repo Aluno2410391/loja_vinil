@@ -1,0 +1,262 @@
+/* ==========================================================================
+   1. IMPORTAÇÕES E CONFIGURAÇÕES DE FONTES (UI/UX)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #2a1f12;
+    background: linear-gradient(180deg, #faf3e9 0%, #e3d0b1 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ==========================================================================
+   2. NAVBAR & HEADER PREMIUM (STICKY & RESPONSIVO)
+   ========================================================================== */
+.navbar {
+    background-color: #ebe48d;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    border-bottom: 2px solid #222;
+    box-shadow: 0 4px 20px rgba(42, 31, 18, 0.06);
+    backdrop-filter: blur(5px);
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.navbar .logo-wrapper img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar:hover .logo-wrapper img {
+    transform: rotate(-3deg) scale(1.02); /* Sutil balanço de vinil no logo */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.nav-links a span {
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover span {
+    transform: scale(1.2);
+}
+
+.nav-links a:hover {
+    background-color: rgba(34, 34, 34, 0.06);
+    color: #000;
+}
+
+.nav-links a.active {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   3. BANNER DE BOAS-VINDAS E SEÇÕES DE TÍTULO
+   ========================================================================== */
+.boas-vindas {
+    margin: 30px 0;
+    font-size: 1.05rem;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 16px 24px;
+    border-radius: 12px;
+    border-left: 5px solid #222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.secao-titulo h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    color: #1a120b;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   4. GRID DE VITRINE & CARDS DE PRODUTOS PREMIUM (UX/UI)
+   ========================================================================== */
+.grid-discos, .grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.card-disco, .produto-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px; /* Cantos arredondados mais suaves e modernos */
+    border: 1px solid rgba(42, 31, 18, 0.06);
+    box-shadow: 0 4px 12px rgba(42, 31, 18, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Efeito Hover Avançado nos Cards (Profundidade UX) */
+.card-disco:hover, .produto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(42, 31, 18, 0.12);
+}
+
+/* Container de Proteção e Efeito Zoom na Imagem do Vinil */
+.container-imagem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    background-color: #fcfcfc;
+}
+
+.card-disco img, .produto-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-disco:hover img, .produto-card:hover img {
+    transform: scale(1.05); /* Zoom elegante na foto ao aproximar o mouse */
+}
+
+.infos-produto {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-disco h3, .produto-card h3 {
+    font-size: 1.2rem;
+    color: #1a120b;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.card-disco .preco, .produto-card p {
+    font-size: 1.4rem;
+    color: #15803d; /* Verde comercial mais sofisticado */
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+/* Botão de Ação Comercial de Alta Conversão */
+.btn-adicionar, .botao-preco {
+    display: block;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-adicionar:hover, .botao-preco:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(34, 34, 34, 0.25);
+}
+
+.btn-adicionar:active, .botao-preco:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE EM CELULARES E MOBILE INTELLIGENT
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar .home-container header, .navbar {
+        padding: 10px 0;
+    }
+    
+    .home-container header, .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+
+    .secao-titulo h2 {
+        font-size: 1.9rem;
+    }
+
+    .grid-discos, .grid-produtos {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .card-disco img, .produto-card img {
+        height: 220px;
+    }
+}

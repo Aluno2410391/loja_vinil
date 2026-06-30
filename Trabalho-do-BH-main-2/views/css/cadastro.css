@@ -1,0 +1,267 @@
+/* ==========================================================================
+   PÁGINA DE CADASTRO / REGISTRO (UI/UX MODERN LUXURY)
+   ========================================================================== */
+
+/* Escopo de página para manter o fundo e alinhamento consistentes */
+body.page-cadastro {
+    background: linear-gradient(135deg, #faf3e9 0%, #e3d0b1 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* ==========================================================================
+   FORÇAMENTO E ALINHAMENTO DA NAVBAR PRESTIGE (ISOLADA)
+   ========================================================================== */
+body.page-cadastro .navbar {
+    background-color: #ebe48d !important;
+    border-bottom: 3.5px solid #1a120b !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+body.page-cadastro .navbar .home-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+body.page-cadastro .logo-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #ffffff !important;
+    padding: 6px 12px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.page-cadastro .logo-wrapper img {
+    height: 42px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+body.page-cadastro .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+body.page-cadastro .nav-links a {
+    text-decoration: none !important;
+    color: #1a120b !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+body.page-cadastro .nav-links a:hover {
+    background-color: rgba(26, 18, 11, 0.08) !important;
+}
+
+/* ==========================================================================
+   CONTAINER E CARD DE CADASTRO
+   ========================================================================== */
+.cadastro-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.cadastro-card {
+    background: #ffffff;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(42, 31, 18, 0.08);
+    box-shadow: 0 12px 40px rgba(42, 31, 18, 0.06);
+    padding: 40px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* Títulos do Bloco */
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.cadastro-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    color: #1a120b;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.cadastro-header p {
+    color: #705c47;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO FORMULÁRIO (INPUTS PREMIUM)
+   ========================================================================== */
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    color: #1a120b;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Campo de input adaptativo */
+.form-group input {
+    width: 100%;
+    background-color: #faf8f5;
+    border: 1px solid rgba(42, 31, 18, 0.15);
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #1a120b;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Microinteração de Focus (Borda preta e leve sombra interna expansiva) */
+.form-group input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #1a120b;
+    box-shadow: 0 0 0 4px rgba(26, 18, 11, 0.05);
+}
+
+/* Melhora a cor do texto de exemplo (placeholder) */
+.form-group input::placeholder {
+    color: #a39281;
+    opacity: 0.8;
+}
+
+/* ALERTAS INTERNOS (Mensagens de Erro ou Validação) */
+.alert-erro {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   BOTÕES E LINKS DE ALTERNÂNCIA
+   ========================================================================== */
+.btn-cadastro-submeter {
+    width: 100%;
+    background-color: #222222;
+    color: #ffffff;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-cadastro-submeter:hover {
+    background-color: #444444;
+    box-shadow: 0 6px 20px rgba(34, 34, 34, 0.25);
+}
+
+.btn-cadastro-submeter:active {
+    transform: scale(0.98);
+}
+
+/* Links para usuários que já possuem conta */
+.cadastro-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: #705c47;
+}
+
+.cadastro-footer a {
+    color: #1a120b;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1.5px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.cadastro-footer a:hover {
+    border-color: #1a120b;
+}
+
+/* ==========================================================================
+   COMPORTAMENTO RESPONSIVO EM SMARTPHONES
+   ========================================================================== */
+@media (max-width: 768px) {
+    body.page-cadastro .navbar .home-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+        text-align: center !important;
+    }
+    
+    body.page-cadastro .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .cadastro-container {
+        padding: 20px 15px;
+    }
+
+    .cadastro-card {
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .cadastro-header h2 {
+        font-size: 1.75rem;
+    }
+}
